@@ -1,6 +1,9 @@
 import React from 'react' //// Ya no es necesario pero se puede dejar
+import { useState, useEffect } from "react";
 
 const Formulario = () => {
+  const [nombre, setNombre] = useState('')
+
   return (
     <>
       <div className='md:w-1/2 lg:w-2/5'>
@@ -19,6 +22,8 @@ const Formulario = () => {
                   type='text'
                   placeholder='Nombre de mascota:'
                   className='border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md'
+                  value={nombre}
+                  onChange={ (e) => setNombre(e.target.value) }
                   />
           </div>
           <div className='mb-5'>
