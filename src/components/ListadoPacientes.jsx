@@ -1,7 +1,8 @@
 import React from 'react'
 import Paciente from './Paciente'
 
-const ListadoPacientes = ({pacientes}) => {
+const ListadoPacientes = ({pacientes, setPaciente, eliminarPaciente}) => {
+
 
   return (
     <>
@@ -18,6 +19,8 @@ const ListadoPacientes = ({pacientes}) => {
               { pacientes.map( paciente =>
                 <Paciente
                   paciente={paciente}
+                  setPaciente={setPaciente}
+                  eliminarPaciente={eliminarPaciente}
                   key={paciente.id}
                 /> )}
             </>
@@ -29,9 +32,7 @@ const ListadoPacientes = ({pacientes}) => {
                   <span className='text-indigo-600 font-bold'>aqui</span>
                 </p>
                 </>
-       }
-
-
+      }
       </div>
     </>
   )
